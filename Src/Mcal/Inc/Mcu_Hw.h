@@ -34,11 +34,16 @@
 #define INTC(x) (x<<21)
 #define INTD(x) (x<<29)
 
-#define PORTS_CONFIG_BASE (0x400FE000)
-#define AHB_BASE_ADRESS_PORT(x) (0x40058000 + (0x1000 * x))
-#define APB_BASE_ADRESS_PORT(x) (0x40004000 + (0x1000 * x))
-
+#define PORTS_CONFIG_BASE 						(0x400FE000)
+#define AHB_BASE_ADRESS_PORT(x) 			(0x40058000 + (0x1000 * x))
+#define APB_BASE_ADRESS_PORT(x) 			(0x40004000 + (0x1000 * x))
+#define CORE_PERIPHERALS_BASE_ADRESS  (0xE000E000)
  
+
+#define STCTRL									*((uint32_t *)(CORE_PERIPHERALS_BASE_ADRESS + 0x010))
+#define STRELOAD								*((uint32_t *)(CORE_PERIPHERALS_BASE_ADRESS + 0x014))
+#define STCURRENT 							*((uint32_t *)(CORE_PERIPHERALS_BASE_ADRESS + 0x018))
+
 #define GPIOHBCTL								*((uint32_t *)(PORTS_CONFIG_BASE + 0x06C))
 #define RCGCGPIO					      *((uint32_t *)(PORTS_CONFIG_BASE + 0x608))
 #define AHB_GPIODATA_PORT(x) 		*((uint32_t *)(AHB_BASE_ADRESS_PORT(x) +  0x000))

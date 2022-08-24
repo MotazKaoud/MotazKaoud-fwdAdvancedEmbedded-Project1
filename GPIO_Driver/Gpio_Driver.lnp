@@ -2,6 +2,7 @@
 ".\gpio_dio.o"
 ".\gpio_port.o"
 ".\gpio_types.o"
+".\systick_timer.o"
 ".\main.o"
 ".\startup_tm4c123.o"
 ".\system_tm4c123.o"

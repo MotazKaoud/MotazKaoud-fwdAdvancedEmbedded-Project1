@@ -22,7 +22,7 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\fwd-Embedded-Advanced-Kaoud\GPIO_Driver\Gpio_Driver.uvprojx
-Project File Date:  08/23/2022
+Project File Date:  08/24/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
@@ -37,13 +37,36 @@ compiling Gpio_Types.c...
                                                ~~  ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
 2 warnings generated.
 compiling Gpio_Port.c...
-../Src/Appl/main.c(18): warning: implicit declaration of function 'PortPin_Init_AHB' is invalid in C99 [-Wimplicit-function-declaration]
-PortPin_Init_AHB (&PA0);
-^
-../Src/Appl/main.c(19): warning: implicit declaration of function 'PortPin_Init_APB' is invalid in C99 [-Wimplicit-function-declaration]
-PortPin_Init_APB (&PA0);
-^
+../Src/Mcal/SysTick_Timer.c(1): warning: In file included from...
+../Src/Mcal/Inc\SysTick_Timer.h(40): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+../Src/Mcal/Inc\SysTick_Timer.h(26): warning: padding struct 'Systick_Configs' with 2 bytes to align 'Systick_Period' [-Wpadded]
+Sys_Tick_Period                                         Systick_Period ;
+                                                        ^
 2 warnings generated.
+compiling SysTick_Timer.c...
+../Src/Appl/main.c(3): warning: In file included from...
+../Src/Mcal/Inc\SysTick_Timer.h(40): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+../Src/Appl/main.c(15): warning: no previous extern declaration for non-static variable 'LED_State' [-Wmissing-variable-declarations]
+enum state LED_State = OFF ;
+           ^
+../Src/Appl/main.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+enum state LED_State = OFF ;
+^
+../Src/Appl/main.c(3): warning: In file included from...
+../Src/Mcal/Inc\SysTick_Timer.h(26): warning: padding struct 'Systick_Configs' with 2 bytes to align 'Systick_Period' [-Wpadded]
+Sys_Tick_Period                                         Systick_Period ;
+                                                        ^
+../Src/Appl/main.c(96): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+../Src/Appl/main.c(11): warning: unused variable 'test' [-Wunused-variable]
+static uint32_t test = 0x0;
+                ^
+5 warnings generated.
 compiling main.c...
 assembling startup_TM4C123.s...
 RTE/Device/TM4C123GE6PM/system_TM4C123.c(13): warning: In file included from...
@@ -183,9 +206,9 @@ C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C1
 44 warnings generated.
 compiling system_TM4C123.c...
 linking...
-Program Size: Code=1356 RO-data=636 RW-data=0 ZI-data=608  
+Program Size: Code=808 RO-data=636 RW-data=0 ZI-data=624  
 FromELF: creating hex file...
-".\Gpio_Driver.axf" - 0 Error(s), 48 Warning(s).
+".\Gpio_Driver.axf" - 0 Error(s), 53 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -211,9 +234,9 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:1.0.1
-      Source file:   Device\Source\system_TM4C123.c
-      Source file:   Device\Source\ARM\startup_TM4C123.s
       Include file:  Device\Include\TM4C123\TM4C123.h
+      Source file:   Device\Source\ARM\startup_TM4C123.s
+      Source file:   Device\Source\system_TM4C123.c
 Build Time Elapsed:  00:00:03
 </pre>
 </body>

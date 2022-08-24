@@ -398,6 +398,11 @@
               <FileType>1</FileType>
               <FilePath>..\Src\Mcal\Gpio_Types.c</FilePath>
             </File>
+            <File>
+              <FileName>SysTick_Timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Mcal\SysTick_Timer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

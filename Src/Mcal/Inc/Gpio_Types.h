@@ -66,5 +66,8 @@ Dio_Level_type 							portpinlevel;
 Port_PinOutputCurrentType   portpinoutputcurrent;
 Port_PinInternalAttachType  portpinattach;
 }PortPin_ConfigType;
-	
+
+
+//momkn t3ml 6 structs kol wahda ll port wkol struct yb2aleha el pin_mode enum bta3ha wt7ot el 6 f array b3d kda
+
 #endif
