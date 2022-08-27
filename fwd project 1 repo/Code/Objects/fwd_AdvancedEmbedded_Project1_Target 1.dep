@@ -1,0 +1,33 @@
+Dependencies for Project 'fwd_AdvancedEmbedded_Project1', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6160000::V6.16::ARMCLANG
+F (.\COTS\Mcal\Gpio_Dio.c)(0x63093020)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./COTS/Libraries -I ./COTS/Hal -I ./COTS/Application -I ./COTS/Mcal/Inc-I./RTE/_Target_1-IC:/Users/Moataz/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GE6PM -D_RTE_-o ./objects/gpio_dio.o -MD)
+I (COTS\Mcal\Inc\Gpio_Dio.h)(0x63093EC2)
+I (COTS\Mcal\Inc\Gpio_Types.h)(0x63094AA6)
+I (COTS\Libraries\stdint.h)(0x6035F908)
+I (COTS\Hal\Mcu_Hw.h)(0x63093F19)
+F (.\COTS\Mcal\Gpio_Port.c)(0x63092FF0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./COTS/Libraries -I ./COTS/Hal -I ./COTS/Application -I ./COTS/Mcal/Inc-I./RTE/_Target_1-IC:/Users/Moataz/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GE6PM -D_RTE_-o ./objects/gpio_port.o -MD)
+I (COTS\Mcal\Inc\Gpio_Port.h)(0x63092D24)
+I (COTS\Mcal\Inc\Gpio_Types.h)(0x63094AA6)
+I (COTS\Libraries\stdint.h)(0x6035F908)
+I (COTS\Hal\Mcu_Hw.h)(0x63093F19)
+F (.\COTS\Mcal\SysTick_Timer.c)(0x630920C0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./COTS/Libraries -I ./COTS/Hal -I ./COTS/Application -I ./COTS/Mcal/Inc-I./RTE/_Target_1-IC:/Users/Moataz/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GE6PM -D_RTE_-o ./objects/systick_timer.o -MD)
+I (COTS\Mcal\Inc\SysTick_Timer.h)(0x630920C0)
+I (COTS\Libraries\stdint.h)(0x6035F908)
+I (COTS\Hal\Mcu_Hw.h)(0x63093F19)
+F (.\COTS\Application\main.c)(0x63094AA6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./COTS/Libraries -I ./COTS/Hal -I ./COTS/Application -I ./COTS/Mcal/Inc-I./RTE/_Target_1-IC:/Users/Moataz/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GE6PM -D_RTE_-o ./objects/main.o -MD)
+I (COTS\Mcal\Inc\Gpio_Dio.h)(0x63093EC2)
+I (COTS\Mcal\Inc\Gpio_Types.h)(0x63094AA6)
+I (COTS\Libraries\stdint.h)(0x6035F908)
+I (COTS\Hal\Mcu_Hw.h)(0x63093F19)
+I (COTS\Mcal\Inc\SysTick_Timer.h)(0x630920C0)
+F (RTE\Device\TM4C123GE6PM\startup_TM4C123.s)(0x51B6E406)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto -c-gdwarf-3 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_Target_1-IC:/Users/Moataz/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-Wa,armasm,--pd,"__UVISION_VERSION SETA 534" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"TM4C123GE6PM SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_tm4c123.o)
+F (RTE\Device\TM4C123GE6PM\system_TM4C123.c)(0x63091BDB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ./COTS/Libraries -I ./COTS/Hal -I ./COTS/Application -I ./COTS/Mcal/Inc-I./RTE/_Target_1-IC:/Users/Moataz/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GE6PM -D_RTE_-o ./objects/system_tm4c123.o -MD)
+I (COTS\Libraries\stdint.h)(0x6035F908)
+I (C:\Users\Moataz\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123.h)(0x530EF2F6)
+I (C:\Users\Moataz\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123GE6PM.h)(0x550FE22C)
+I (C:\Users\Moataz\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F9F3E)
+I (C:\Users\Moataz\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F9F3E)
+I (C:\Users\Moataz\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F9F3E)
+I (C:\Users\Moataz\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F9F3E)
+I (C:\Users\Moataz\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F9F3E)
+I (C:\Users\Moataz\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\system_TM4C123.h)(0x51B6E406)
