@@ -1,25 +1,18 @@
 #include "Gpio_Dio.h"
 #include "Gpio_Types.h"
 #include "SysTick_Timer.h"
+#include "User_Configs.h"
 
 void SysTick_Handler (void);
-void systick_delay (void);
 
+extern uint32_t systickcounter = 0;
 
-static uint8_t on_time = 0xA;
-static uint8_t off_time = 0x5;
-static uint32_t test = 0x0;
-static uint64_t systick_counter = 0;
-
-enum state {OFF, ON} ;
-enum state LED_State = OFF ;
-static	Systick_Counter   syscounter1 = 0x0;
 
 
 int main (void)
 {
 
-/****************************************Testing Gpio_Driver including port dirver and dio driver************************/
+/****************************************Testing Gpio_Driver including port dirver and dio driver************************
 	
 static Port_Type port_1= PORTB;
 static Port_PinDirectionType pindir_1 = OUT ;
@@ -43,13 +36,13 @@ Dio_FlipChannel(pin_1, port_1) ;
 
 
 
-/****************************************Testing Gpio_Driver including port dirver and dio driver end**********************/
+****************************************Testing Gpio_Driver including port dirver and dio driver end**********************/
  
 
-/****************************************Testing systick_driver including port dirver and dio driver end**********************
+/****************************************Testing systick_driver including port dirver and dio driver end**********************/
 
 
-Systick_Interrupt_Type 		sys1_int = ENABLE		 ;
+Systick_Interrupt_Type 		sys1_int = ENABLE		;
 Systick_Clock_Type 				sys1_clck = SYSTEM_CLOCK  ;
 Sys_Tick_Period 					sys1_per = (0x1) ;
 
@@ -59,33 +52,17 @@ Systick_Init( &sys_config1) ;
 Start_Systick ();
 
 /****************************************Testing systick_driver including port dirver and dio driver end**********************/
-
-
-
 return 0;
+
 }
 
-/*
-void SysTick_Handler () 
+
+
+void SysTick_Handler ()
 {
-	syscounter1 += 0x1 ;
-	if(Dio_ReadChannel(pin_1,port_1) == LOW )
-		{
-			if(syscounter1 >= off_time)
-				{
-					Dio_WriteChannel(pin_1, port_1, HIGH);
-					LED_State = ON;
-					syscounter1 = 0x0;
-				}
-		}
-	else // LED_State = ON
-		{
-			if(syscounter1 >= on_time)
-				{
-					Dio_WriteChannel(pin_1, port_1, LOW);
-					LED_State = OFF;
-					syscounter1 = 0x0;
-				}
-		}
+systickcounter ++ ;
+	if (NOTFICATION)
+	{
+	CBK(& systickcounter);
+	}
 }
-*/

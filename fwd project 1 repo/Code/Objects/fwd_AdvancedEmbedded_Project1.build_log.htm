@@ -21,12 +21,65 @@ Target DLL:      UL2CM3.DLL V1.163.9.0
 Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
-F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\fwd project 1 repo\fwd_AdvancedEmbedded_Project1.uvprojx
-Project File Date:  08/26/2022
+F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\MotazKaoud-fwdAdvancedEmbedded-Project1\fwd project 1 repo\Code\fwd_AdvancedEmbedded_Project1.uvprojx
+Project File Date:  08/27/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
+COTS/Mcal/SysTick_Timer.c(15): warning: In file included from...
+./COTS/Mcal/Inc\SysTick_Timer.h(17): warning: In file included from...
+./COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(175): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(182): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(189): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(209): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+COTS/Mcal/SysTick_Timer.c(16): warning: In file included from...
+./COTS/Application\User_Configs.h(5): warning: no newline at end of file [-Wnewline-eof]
+void testfn (uint32_t *x);
+                          ^
+COTS/Mcal/SysTick_Timer.c(15): warning: In file included from...
+./COTS/Mcal/Inc\SysTick_Timer.h(54): warning: padding struct 'Systick_Configs' with 2 bytes to align 'Systick_Period' [-Wpadded]
+Sys_Tick_Period                                         Systick_Period ;
+                                                        ^
+8 warnings generated.
+compiling SysTick_Timer.c...
+COTS/Mcal/Gpio_Dio.c(16): warning: In file included from...
+./COTS/Mcal/Inc\Gpio_Dio.h(17): warning: In file included from...
+./COTS/Mcal/Inc/Gpio_Types.h(17): warning: In file included from...
+./COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(175): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(182): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(189): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(209): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+6 warnings generated.
+compiling Gpio_Dio.c...
 COTS/Mcal/Gpio_Port.c(15): warning: In file included from...
 ./COTS/Mcal/Inc\Gpio_Port.h(17): warning: In file included from...
 ./COTS/Mcal/Inc/Gpio_Types.h(17): warning: In file included from...
@@ -56,58 +109,6 @@ COTS/Mcal/Gpio_Port.c(182): warning: implicit conversion changes signedness: 'in
                                                ~~  ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
 8 warnings generated.
 compiling Gpio_Port.c...
-COTS/Mcal/SysTick_Timer.c(1): warning: In file included from...
-./COTS/Mcal/Inc\SysTick_Timer.h(3): warning: In file included from...
-./COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-./COTS/Libraries\stdint.h(175): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-./COTS/Libraries\stdint.h(182): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-./COTS/Libraries\stdint.h(189): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-./COTS/Libraries\stdint.h(209): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-./COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-COTS/Mcal/SysTick_Timer.c(1): warning: In file included from...
-./COTS/Mcal/Inc\SysTick_Timer.h(42): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-./COTS/Mcal/Inc\SysTick_Timer.h(28): warning: padding struct 'Systick_Configs' with 2 bytes to align 'Systick_Period' [-Wpadded]
-Sys_Tick_Period                                         Systick_Period ;
-                                                        ^
-8 warnings generated.
-compiling SysTick_Timer.c...
-COTS/Mcal/Gpio_Dio.c(16): warning: In file included from...
-./COTS/Mcal/Inc\Gpio_Dio.h(17): warning: In file included from...
-./COTS/Mcal/Inc/Gpio_Types.h(17): warning: In file included from...
-./COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-./COTS/Libraries\stdint.h(175): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-./COTS/Libraries\stdint.h(182): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-./COTS/Libraries\stdint.h(189): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-./COTS/Libraries\stdint.h(209): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-./COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-6 warnings generated.
-compiling Gpio_Dio.c...
 COTS/Application/main.c(1): warning: In file included from...
 ./COTS/Mcal/Inc\Gpio_Dio.h(17): warning: In file included from...
 ./COTS/Mcal/Inc/Gpio_Types.h(17): warning: In file included from...
@@ -129,42 +130,52 @@ COTS/Application/main.c(1): warning: In file included from...
 ./COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
 #if __sizeof_ptr == 8
     ^
-COTS/Application/main.c(3): warning: In file included from...
-./COTS/Mcal/Inc\SysTick_Timer.h(42): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-COTS/Application/main.c(15): warning: no previous extern declaration for non-static variable 'LED_State' [-Wmissing-variable-declarations]
-enum state LED_State = OFF ;
-           ^
-COTS/Application/main.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-enum state LED_State = OFF ;
-^
-COTS/Application/main.c(33): warning: implicit declaration of function 'PortPin_Init_AHB' is invalid in C99 [-Wimplicit-function-declaration]
-PortPin_Init_AHB (&PB2);
-^
-COTS/Application/main.c(61): warning: '/*' within block comment [-Wcomment]
-/****************************************Testing systick_driver including port dirver and dio driver end**********************/
-^
-COTS/Application/main.c(91): warning: no newline at end of file [-Wnewline-eof]
-*/
-  ^
-COTS/Application/main.c(9): warning: unused variable 'on_time' [-Wunused-variable]
-static uint8_t on_time = 0xA;
-               ^
-COTS/Application/main.c(10): warning: unused variable 'off_time' [-Wunused-variable]
-static uint8_t off_time = 0x5;
-               ^
-COTS/Application/main.c(11): warning: unused variable 'test' [-Wunused-variable]
-static uint32_t test = 0x0;
-                ^
-COTS/Application/main.c(12): warning: unused variable 'systick_counter' [-Wunused-variable]
-static uint64_t systick_counter = 0;
-                ^
-COTS/Application/main.c(16): warning: unused variable 'syscounter1' [-Wunused-variable]
-static  Systick_Counter   syscounter1 = 0x0;
+COTS/Application/main.c(4): warning: In file included from...
+./COTS/Application/User_Configs.h(5): warning: no newline at end of file [-Wnewline-eof]
+void testfn (uint32_t *x);
                           ^
-16 warnings generated.
+COTS/Application/main.c(8): warning: 'extern' variable has an initializer [-Wextern-initializer]
+extern uint32_t systickcounter = 0;
+                ^
+COTS/Application/main.c(8): warning: no previous extern declaration for non-static variable 'systickcounter' [-Wmissing-variable-declarations]
+COTS/Application/main.c(8): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+extern uint32_t systickcounter = 0;
+       ^
+COTS/Application/main.c(3): warning: In file included from...
+./COTS/Mcal/Inc\SysTick_Timer.h(54): warning: padding struct 'Systick_Configs' with 2 bytes to align 'Systick_Period' [-Wpadded]
+Sys_Tick_Period                                         Systick_Period ;
+                                                        ^
+10 warnings generated.
 compiling main.c...
+User_Configs.c(1): warning: In file included from...
+./COTS/Application\User_Configs.h(1): warning: In file included from...
+./COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(175): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(182): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(189): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(209): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+./COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
+#if __sizeof_ptr == 8
+    ^
+User_Configs.c(1): warning: In file included from...
+./COTS/Application\User_Configs.h(5): warning: no newline at end of file [-Wnewline-eof]
+void testfn (uint32_t *x);
+                          ^
+User_Configs.c(11): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+8 warnings generated.
+compiling User_Configs.c...
 assembling startup_TM4C123.s...
 RTE/Device/TM4C123GE6PM/system_TM4C123.c(12): warning: In file included from...
 ./COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
@@ -322,8 +333,8 @@ C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C1
 50 warnings generated.
 compiling system_TM4C123.c...
 linking...
-Program Size: Code=1024 RO-data=636 RW-data=0 ZI-data=608  
-".\Objects\fwd_AdvancedEmbedded_Project1.axf" - 0 Error(s), 88 Warning(s).
+Program Size: Code=760 RO-data=636 RW-data=0 ZI-data=616  
+".\Objects\fwd_AdvancedEmbedded_Project1.axf" - 0 Error(s), 90 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -352,7 +363,7 @@ Package Vendor: Keil
       Include file:  Device\Include\TM4C123\TM4C123.h
       Source file:   Device\Source\ARM\startup_TM4C123.s
       Source file:   Device\Source\system_TM4C123.c
-Build Time Elapsed:  00:00:07
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Objects\fwd_AdvancedEmbedded_Project1.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\fwd_AdvancedEmbedded_Project1.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Sat Aug 27 00:35:24 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Sat Aug 27 22:39:01 2022
 <BR><P>
-<H3>Maximum Stack Usage =         36 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =         16 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__rt_entry_main &rArr; main &rArr; PortPin_Init_AHB
+__rt_entry_main &rArr; main
 <P>
 <H3>
 Functions with no stack information
@@ -26,7 +26,6 @@ Mutually Recursive functions
  <LI><a href="#[6]">SVC_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[6]">SVC_Handler</a><BR>
  <LI><a href="#[7]">DebugMon_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[7]">DebugMon_Handler</a><BR>
  <LI><a href="#[8]">PendSV_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8]">PendSV_Handler</a><BR>
- <LI><a href="#[9]">SysTick_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[9]">SysTick_Handler</a><BR>
  <LI><a href="#[a]">GPIOA_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[a]">GPIOA_Handler</a><BR>
  <LI><a href="#[b]">GPIOB_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[b]">GPIOB_Handler</a><BR>
  <LI><a href="#[c]">GPIOC_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[c]">GPIOC_Handler</a><BR>
@@ -220,7 +219,7 @@ Function Pointers
  <LI><a href="#[41]">SSI3_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[6]">SVC_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[26]">SYSCTL_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
- <LI><a href="#[9]">SysTick_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
+ <LI><a href="#[9]">SysTick_Handler</a> from main.o(.text.SysTick_Handler) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[76]">SystemInit</a> from system_tm4c123.o(.text.SystemInit) referenced from startup_tm4c123.o(.text)
  <LI><a href="#[1d]">TIMER0A_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[1e]">TIMER0B_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
@@ -372,8 +371,8 @@ Global Symbols
 <P><STRONG><a name="[ad]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[82]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; PortPin_Init_AHB
+<BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main
 </UL>
 <BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -451,13 +450,6 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
-</UL>
-<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_tm4c123.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
-</UL>
-<BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
@@ -1264,29 +1256,33 @@ Global Symbols
 
 <P><STRONG><a name="[b7]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[8d]"></a>Dio_FlipChannel</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, gpio_dio.o(.text.Dio_FlipChannel))
+<P><STRONG><a name="[8b]"></a>CBK</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, systick_timer.o(.text.CBK))
+<BR><BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+
+<P><STRONG><a name="[8d]"></a>Start_Systick</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, systick_timer.o(.text.Start_Systick))
 <BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8c]"></a>Dio_WriteChannel</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, gpio_dio.o(.text.Dio_WriteChannel))
-<BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, main.o(.text.SysTick_Handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SysTick_Handler
 </UL>
-
-<P><STRONG><a name="[8b]"></a>PortPin_Init_AHB</STRONG> (Thumb, 292 bytes, Stack size 20 bytes, gpio_port.o(.text.PortPin_Init_AHB))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = PortPin_Init_AHB
+<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CBK
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
-
 <P><STRONG><a name="[76]"></a>SystemInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, system_tm4c123.o(.text.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(.text)
 </UL>
-<P><STRONG><a name="[83]"></a>main</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = main &rArr; PortPin_Init_AHB
+<P><STRONG><a name="[8c]"></a>Systick_Init</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, systick_timer.o(.text.Systick_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortPin_Init_AHB
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_WriteChannel
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_FlipChannel
+
+<P><STRONG><a name="[83]"></a>main</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = main
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_Init
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Start_Systick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>

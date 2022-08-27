@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\COTS\Libraries;.\COTS\Hal;.\COTS\Application;.\COTS\Mcal\Inc</IncludePath>
+              <IncludePath>.\COTS\Libraries;.\COTS\Hal;.\COTS\Application;.\COTS\Mcal\Inc;.\COTS\Application</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -410,6 +410,11 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\COTS\Application\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>User_Configs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User_Configs.c</FilePath>
             </File>
           </Files>
         </Group>
