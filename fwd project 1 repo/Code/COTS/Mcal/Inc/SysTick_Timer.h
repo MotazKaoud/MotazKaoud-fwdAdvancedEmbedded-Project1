@@ -66,7 +66,7 @@ void Systick_Init (Systick_Configs *ConfigPtr);
 void Start_Systick (void);
 void Stop_Systick (void);
 Systick_Current_Value_Type Systick_STCURRENT_Value (void);
-void CBK (uint32_t *notif);
+
 
  
 #endif  /* FILE_NAME_H */

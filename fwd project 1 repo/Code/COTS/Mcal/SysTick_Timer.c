@@ -126,11 +126,7 @@ Systick_Current_Value_Type Systick_STCURRENT_Value (void){
 return STCURRENT ;
 }
 
-void CBK (uint32_t *notif)
-{
-if (*notif > 5)
-{*notif = 0 ;}
-}
+
 
 /**********************************************************************************************************************
  *  END OF FILE: SysTick_Timer.c

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\COTS\Libraries;.\COTS\Hal;.\COTS\Application;.\COTS\Mcal\Inc;.\COTS\Application</IncludePath>
+              <IncludePath>..\COTS\Libraries;..\COTS\Hal;..\COTS\Application;..\COTS\Mcal\Inc;..\COTS\Application</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -357,7 +357,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>..\COTS\Hal;..\COTS\Libraries;..\COTS\Mcal\Inc</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -386,17 +386,17 @@
             <File>
               <FileName>Gpio_Dio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\COTS\Mcal\Gpio_Dio.c</FilePath>
+              <FilePath>F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\MotazKaoud-fwdAdvancedEmbedded-Project1\fwd project 1 repo\Code\COTS\Mcal\Gpio_Dio.c</FilePath>
             </File>
             <File>
               <FileName>Gpio_Port.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\COTS\Mcal\Gpio_Port.c</FilePath>
+              <FilePath>F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\MotazKaoud-fwdAdvancedEmbedded-Project1\fwd project 1 repo\Code\COTS\Mcal\Gpio_Port.c</FilePath>
             </File>
             <File>
               <FileName>SysTick_Timer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\COTS\Mcal\SysTick_Timer.c</FilePath>
+              <FilePath>F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\MotazKaoud-fwdAdvancedEmbedded-Project1\fwd project 1 repo\Code\COTS\Mcal\SysTick_Timer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -409,12 +409,12 @@
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\COTS\Application\main.c</FilePath>
+              <FilePath>F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\MotazKaoud-fwdAdvancedEmbedded-Project1\fwd project 1 repo\Code\COTS\Application\main.c</FilePath>
             </File>
             <File>
               <FileName>User_Configs.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\User_Configs.c</FilePath>
+              <FilePath>..\COTS\Application\User_Configs.c</FilePath>
             </File>
           </Files>
         </Group>
