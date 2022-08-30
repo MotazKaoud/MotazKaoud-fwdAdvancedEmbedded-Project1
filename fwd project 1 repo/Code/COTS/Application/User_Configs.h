@@ -20,9 +20,9 @@
 #define REQ_SYSTICK_PERIOD 					(0x01)
 
 /************** Application User Requirments ******************/
-#define on_time (uint32_t)(0x05)
+#define on_time  (uint32_t)(0x05)
 #define off_time (uint32_t)(0x0A)
 
 
-void CBK (uint32_t *notif);
+void CBK (void);
 

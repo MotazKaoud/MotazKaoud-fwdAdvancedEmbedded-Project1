@@ -411,11 +411,6 @@
               <FileType>1</FileType>
               <FilePath>F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\MotazKaoud-fwdAdvancedEmbedded-Project1\fwd project 1 repo\Code\COTS\Application\main.c</FilePath>
             </File>
-            <File>
-              <FileName>User_Configs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\COTS\Application\User_Configs.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>

@@ -4,7 +4,7 @@
 #include "User_Configs.h"
 
 void SysTick_Handler (void);
-void CBK (uint32_t *notif);
+void CBK (void);
 
 static Port_Type 									 port_1				= REQ_PORT_TYPE;
 static Port_PinDirectionType 			 pindir_1 		= REQ_PORT_PIN_DIRECTION_TYPE ;
@@ -15,7 +15,8 @@ static Port_PinOutputCurrentType   pincurrent_1 = REQ_PIN_OUTPUT_CURRENT_TYPE;
 static Port_PinInternalAttachType  pinattach_1 	= REQ_PIN_INTERNAL_ATTACH_TYPE;
 static PortPin_ConfigType 				 PB2 ;
 
-extern uint32_t systickcounter = 0;
+extern uint32_t  systickcounter = 0;
+static uint32_t *syscounterptr  = &systickcounter;
 static Systick_Interrupt_Type			sys1_int  = REQ_SYSTICK_INTERRUPT_TYPE ;
 static Systick_Clock_Type 				sys1_clck = REQ_SYSTICK_CLOCK_TYPE  ;
 static Sys_Tick_Period 					  sys1_per  = REQ_SYSTICK_PERIOD ;
@@ -52,32 +53,32 @@ Start_Systick ();
 
 void SysTick_Handler ()
 {
-systickcounter ++ ;
+(*syscounterptr) ++ ;
 	if (NOTFICATION)
 	{
-	CBK(& systickcounter);
+	CBK();
 	}
 }
 
 
-void CBK (uint32_t *notif)
+void CBK ()
 {
 	if(Dio_ReadChannel(pin_1,port_1) == LOW ) // LED_OFF
 
 		{
-			if((*notif >= off_time) == 0x1)
+			if((*syscounterptr >= off_time) == 0x1)
 				{
 					Dio_WriteChannel(pin_1, port_1, HIGH); //turn on
-					*notif  = 0x0;
+					*syscounterptr  = 0x0;
 				}
 		}
 	else if (Dio_ReadChannel(pin_1,port_1) == HIGH )// LED = ON
 		{
-			if(*notif >= on_time)
+			if(*syscounterptr >= on_time)
 				{
 					Dio_WriteChannel(pin_1, port_1, LOW); //tun off
-					*notif = 0x0;
-				}
+					*syscounterptr = 0x0;
+			}
 		}
 }
 
