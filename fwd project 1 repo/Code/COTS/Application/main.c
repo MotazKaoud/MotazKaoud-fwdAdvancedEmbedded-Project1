@@ -54,10 +54,7 @@ Start_Systick ();
 void SysTick_Handler ()
 {
 (*syscounterptr) ++ ;
-	if (NOTFICATION)
-	{
-	CBK();
-	}
+	
 }
 
 
