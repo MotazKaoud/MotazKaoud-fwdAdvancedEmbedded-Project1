@@ -71,7 +71,7 @@ PB3_DIO=0, PB3_I2C0SDA=3, PB3_T3CCP1=7,
 PB4_DIO=0, PB4_SSI2Clk=2, PB4_M0PWM2=4, PB4_T1CCP0=7, PB4_CAN0Rx=8,
 PB5_DIO=0, PB5_SSI2Fss=2, PB5_M0PWM3=4, PB5_T1CCP1=7, PB5_CAN0Tx=8,
 PB6_DIO=0, PB6_SSI2Rx=2,  PB6_M0PWM0=4, PB6_T1CCP0=7,  
-PB7_DIO=0, PB6_SSI2Tx=2,  PB6_M0PWM1=4, PB6_T1CCP1=7   
+PB7_DIO=0, PB6_SSI2Tx=2,  PB6_M0PWM1=4, PB6_T1CCP1=7,   
 	
 /* PORTC pins diffrent modes */
 	
@@ -80,6 +80,11 @@ PB7_DIO=0, PB6_SSI2Tx=2,  PB6_M0PWM1=4, PB6_T1CCP1=7
 /* PORTE pins diffrent modes */
 	
 /* PORTF pins diffrent modes */
+PF0_DIO=0,
+PF1_DIO=0,
+PF2_DIO=0,
+PF3_DIO=0,
+PF4_DIO=0,
 } Port_PinModeType;
 //Table 23-5. GPIO Pins and Alternate Functions Page:1350
 
@@ -93,17 +98,30 @@ typedef enum
 typedef enum
 {mA2, mA4, mA8} Port_PinOutputCurrentType; 
 
+typedef enum
+{ON_EDGE, ON_LEVEL} Port_InterruptEventType; 
+
+typedef enum
+{ON_LOW, ON_HIGH, ON_BOTH} Port_InterruptEventStateType; 
+
+typedef enum
+{DISABLE_GINT, ENABLE_GINT} Port_InterruptStateType; 
+
 
 typedef struct 
 {
-Port_Type										porttype;
-Port_PinDirectionType 			portpindirection;
-Dio_Channel_Type 						portpin;
-Port_PinModeType 						portpinmode;
-Dio_Level_type 							portpinlevel;
-Port_PinOutputCurrentType   portpinoutputcurrent;
-Port_PinInternalAttachType  portpinattach;
+Port_Type												porttype;
+Port_PinDirectionType 					portpindirection;
+Dio_Channel_Type 								portpin;
+Port_PinModeType 								portpinmode;
+Dio_Level_type 									portpinlevel;
+Port_PinOutputCurrentType   		portpinoutputcurrent;
+Port_PinInternalAttachType  		portpinattach;
+Port_InterruptEventType					portinterruptevent;
+Port_InterruptEventStateType portinterrupteventstate;
+Port_InterruptStateType					portinterruptstate;
 }PortPin_ConfigType;
+
 
 
 /**********************************************************************************************************************

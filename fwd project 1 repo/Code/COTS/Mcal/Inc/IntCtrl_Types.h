@@ -2,21 +2,19 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  Gpio_Dio.h
- *       Module:  
+ *         File: IntCtrl_Types.h
+ *       Module:  -
  *
- *  Description:  Header file for the GPIO_Dio driver that controls the DIO Operations
+ *  Description:  header file includes the required types Interrupt Driver     
  *  
  *********************************************************************************************************************/
-#ifndef GPIO_DIO_H
-#define GPIO_DIO_H
+#ifndef INTCTRL_TYPES_H
+#define INTCTRL_TYPES_H
 
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
-#include "Gpio_Types.h"
-#include "Mcu_Hw.h"
-
+#include <stdint.h>
 
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
@@ -33,6 +31,20 @@
  *********************************************************************************************************************/
 
 
+#define INT_GPIOPortA 0
+#define INT_GPIOPortB 1
+#define INT_GPIOPortC 2
+#define INT_GPIOPortD 3
+#define INT_GPIOPortE 4
+#define INT_UART0  		5
+#define INT_UART1 		6
+#define INT_SSIO  		7
+#define INT_I2C0  		8
+//.......................... so on till last interrupt	
+
+typedef enum 
+{XXX=4, XXY=5, XYY=6, YYY=7} APINT_Type;
+
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/
@@ -41,14 +53,10 @@
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
-Dio_Level_type Dio_ReadChannel (Dio_Channel_Type ChannelId,Port_Type channelport);
-void Dio_WriteChannel (Dio_Channel_Type ChannelId,Port_Type channelport, Dio_Level_type channellevel);
-void Dio_FlipChannel (Dio_Channel_Type ChannelId,Port_Type channelport);
-Dio_Level_type Dio_ReadChannel_APB (Dio_Channel_Type ChannelId,Port_Type channelport);
-void Dio_WriteChannel_APB (Dio_Channel_Type ChannelId,Port_Type channelport, Dio_Level_type channellevel);
-void Dio_FlipChannel_APB (Dio_Channel_Type ChannelId,Port_Type channelport); 
+
+ 
 #endif  /* FILE_NAME_H */
 
 /**********************************************************************************************************************
- *  END OF FILE: Gpio_Dio.h
+ *  END OF FILE: IntrCtrl_Types.h
  *********************************************************************************************************************/

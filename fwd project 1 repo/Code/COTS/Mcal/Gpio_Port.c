@@ -14,6 +14,7 @@
  *********************************************************************************************************************/
 #include "Gpio_Port.h"
 
+
 /**********************************************************************************************************************
 *  LOCAL MACROS CONSTANT\FUNCTION
 *********************************************************************************************************************/
@@ -121,6 +122,31 @@ enable GPIO pins to their analog function (if available), set the GPIOAMSEL bit 
 GPIOAMSEL register. */
 	if ((Configptr->portpinmode) == 0) // Pin is DIO,
 	{AHB_GPIODEN_PORT(Configptr->porttype) |= (1<<(Configptr->portpin));}
+
+/************************************Interrupt Connfigurations**************************************/
+if (Configptr->portinterruptstate)
+{
+/*a. Mask the corresponding port by clearing the IME field in the GPIOIM register, for each port 8 bits corresponding to 8 pins enable/disable interrupt from pin*/
+AHB_GPIOIM_PORT(Configptr->porttype) &= ~ (1<<(Configptr->portpin));
+/*b. Configure the IS field in the GPIOIS register, r. Setting a bit in the GPIOIS register configures the corresponding pin to detect levels, while clearing a bit   configures the corresponding pin to detect edges. All bits are cleared by a reset*/
+AHB_GPIOIS_PORT(Configptr->porttype) &= ~ (1<<(Configptr->portpin));
+AHB_GPIOIS_PORT(Configptr->porttype) |=   ((uint32_t)(Configptr->portinterruptevent)<<(Configptr->portpin));
+/*c. Configure IBE field in the GPIOIBE register.(Both Edges can do interrupt, or one of edges/levels according to GPIOIEV)*/	
+if (Configptr->portinterrupteventstate == ON_BOTH) // both edges can trigger interrupt, set the pin bit 
+{AHB_GPIOIBE_PORT(Configptr->porttype) |=   (1<<(Configptr->portpin));}
+else // one of edges/levels can trigger interrupt, clear the pin bit
+{
+AHB_GPIOIBE_PORT(Configptr->porttype) &= ~ (1<<(Configptr->portpin));
+/* d. Configure GPIOIEV(Raising edge/level or failing edge/level can do interrupt)*/
+AHB_GPIOIEV_PORT(Configptr->porttype) &= ~ (1<<(Configptr->portpin));
+AHB_GPIOIEV_PORT(Configptr->porttype) |=   ((uint32_t)(Configptr->portinterrupteventstate)<<(Configptr->portpin));
+}
+/*e. Clear the GPIORIS register from GPIOICR*/
+AHB_GPIOICR_PORT(Configptr->porttype) &= ~(1<<(Configptr->portpin));
+/*f. Unmask the port by setting the IME field in the GPIOIM register.*/
+AHB_GPIOIM_PORT(Configptr->porttype) |= (1<<(Configptr->portpin));
+}
+
 }
 
 
@@ -207,6 +233,30 @@ GPIOAMSEL register. */
 	{APB_GPIODEN_PORT(Configptr->porttype) |= (1<<(Configptr->portpin));}
 	
 
+
+/************************************Interrupt Connfigurations**************************************/
+if (Configptr->portinterruptstate)
+{
+/*a. Mask the corresponding port by clearing the IME field in the GPIOIM register, for each port 8 bits corresponding to 8 pins enable/disable interrupt from pin*/
+APB_GPIOIM_PORT(Configptr->porttype) &= ~ (1<<(Configptr->portpin));
+/*b. Configure the IS field in the GPIOIS register, r. Setting a bit in the GPIOIS register configures the corresponding pin to detect levels, while clearing a bit   configures the corresponding pin to detect edges. All bits are cleared by a reset*/
+APB_GPIOIS_PORT(Configptr->porttype) &= ~ (1<<(Configptr->portpin));
+APB_GPIOIS_PORT(Configptr->porttype) |=   ((uint32_t)(Configptr->portinterruptevent)<<(Configptr->portpin));
+/*c. Configure IBE field in the GPIOIBE register.(Both Edges can do interrupt, or one of edges/levels according to GPIOIEV)*/	
+if (Configptr->portinterrupteventstate == ON_BOTH) // both edges can trigger interrupt, set the pin bit 
+{APB_GPIOIBE_PORT(Configptr->porttype) |=   (1<<(Configptr->portpin));}
+else // one of edges/levels can trigger interrupt, clear the pin bit
+{
+APB_GPIOIBE_PORT(Configptr->porttype) &= ~ (1<<(Configptr->portpin));
+/* d. Configure GPIOIEV(Raising edge/level or failing edge/level can do interrupt)*/
+APB_GPIOIEV_PORT(Configptr->porttype) &= ~ (1<<(Configptr->portpin));
+APB_GPIOIEV_PORT(Configptr->porttype) |=   ((uint32_t)(Configptr->portinterrupteventstate)<<(Configptr->portpin));
+}
+/*e. Clear the GPIORIS register from GPIOICR*/
+APB_GPIOICR_PORT(Configptr->porttype) &= ~(1<<(Configptr->portpin));
+/*f. Unmask the port by setting the IME field in the GPIOIM register.*/
+APB_GPIOIM_PORT(Configptr->porttype) |= (1<<(Configptr->portpin));
+}
 
 }
 

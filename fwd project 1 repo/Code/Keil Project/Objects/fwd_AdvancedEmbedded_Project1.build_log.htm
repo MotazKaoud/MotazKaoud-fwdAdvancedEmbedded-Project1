@@ -3,32 +3,32 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.34.0.0
-Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Mo'taz Kaoud, Faculty of Engineering,Ain Shams University, LIC=----
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Motaz MostafaKaoud, Ainshams University, Faculty of Engineering, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.34.0.0
+Toolchain:       MDK-Lite  Version: 5.29.0.0
 Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.16
-Assembler:       Armasm.exe V6.16
-Linker/Locator:  ArmLink.exe V6.16
-Library Manager: ArmAr.exe V6.16
-Hex Converter:   FromElf.exe V6.16
-CPU DLL:         SARMCM3.DLL V5.34.0.0
+C Compiler:      ArmClang.exe V6.13.1
+Assembler:       Armasm.exe V6.13.1
+Linker/Locator:  ArmLink.exe V6.13.1
+Library Manager: ArmAr.exe V6.13.1
+Hex Converter:   FromElf.exe V6.13.1
+CPU DLL:         SARMCM3.DLL V5.29.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      UL2CM3.DLL V1.163.9.0
-Dialog DLL:      TCM.DLL V1.48.0.0
+Target DLL:      UL2CM3.DLL V1.163.0.0
+Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
 F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\MotazKaoud-fwdAdvancedEmbedded-Project1\fwd project 1 repo\Code\Keil Project\fwd_AdvancedEmbedded_Project1.uvprojx
-Project File Date:  08/30/2022
+Project File Date:  09/25/2022
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Target 1'
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Mcal/SysTick_Timer.c(15): warning: In file included from...
-../COTS/Mcal/Inc\SysTick_Timer.h(17): warning: In file included from...
+*** Using Compiler 'V6.13.1', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+../COTS/Mcal/IntCtrl.c(15): warning: In file included from...
+../COTS/Mcal/Inc\IntCtrl.h(17): warning: In file included from...
 ../COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
 #if __sizeof_ptr == 8
     ^
@@ -47,257 +47,14 @@ F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes
 ../COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
 #if __sizeof_ptr == 8
     ^
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Mcal/SysTick_Timer.c(15): warning: In file included from...
-../COTS/Mcal/Inc\SysTick_Timer.h(54): warning: padding struct 'Systick_Configs' with 2 bytes to align 'Systick_Period' [-Wpadded]
-Sys_Tick_Period                                         Systick_Period ;
-                                                        ^
+../COTS/Mcal/IntCtrl.c(57): warning: unused variable 'counter2' [-Wunused-variable]
+uint32_t counter2 = 0;
+         ^
 7 warnings generated.
-compiling SysTick_Timer.c...
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Mcal/Gpio_Port.c(15): warning: In file included from...
-../COTS/Mcal/Inc\Gpio_Port.h(17): warning: In file included from...
-../COTS/Mcal/Inc/Gpio_Types.h(17): warning: In file included from...
-../COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(175): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(182): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(189): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(209): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Mcal/Gpio_Port.c(98): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-        AHB_GPIOPCTL_PORT(Configptr->porttype) |= ((Configptr->portpinmode)<<((Configptr->portpin)*4)) ; 
-                                               ~~  ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Mcal/Gpio_Port.c(182): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-        APB_GPIOPCTL_PORT(Configptr->porttype) |= ((Configptr->portpinmode)<<((Configptr->portpin)*4)) ; 
-                                               ~~  ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
-8 warnings generated.
-compiling Gpio_Port.c...
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Mcal/Gpio_Dio.c(16): warning: In file included from...
-../COTS/Mcal/Inc\Gpio_Dio.h(17): warning: In file included from...
-../COTS/Mcal/Inc/Gpio_Types.h(17): warning: In file included from...
-../COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(175): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(182): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(189): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(209): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-6 warnings generated.
-compiling Gpio_Dio.c...
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Application/main.c(1): warning: In file included from...
-../COTS/Mcal/Inc\Gpio_Dio.h(17): warning: In file included from...
-../COTS/Mcal/Inc/Gpio_Types.h(17): warning: In file included from...
-../COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(175): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(182): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(189): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(209): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Application/main.c(18): warning: 'extern' variable has an initializer [-Wextern-initializer]
-extern uint32_t  systickcounter = 0;
-                 ^
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Application/main.c(18): warning: no previous extern declaration for non-static variable 'systickcounter' [-Wmissing-variable-declarations]
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Application/main.c(18): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-extern uint32_t  systickcounter = 0;
-       ^
-F:/ASUFE/Postgraduate/Learning_Courses/FWD Embedded Systems Advanced Track/Codes/_workspace/MotazKaoud-fwdAdvancedEmbedded-Project1/fwd project 1 repo/Code/COTS/Application/main.c(3): warning: In file included from...
-../COTS/Mcal/Inc\SysTick_Timer.h(54): warning: padding struct 'Systick_Configs' with 2 bytes to align 'Systick_Period' [-Wpadded]
-Sys_Tick_Period                                         Systick_Period ;
-                                                        ^
-9 warnings generated.
-compiling main.c...
-assembling startup_TM4C123.s...
-RTE/Device/TM4C123GE6PM/system_TM4C123.c(12): warning: In file included from...
-../COTS/Libraries\stdint.h(97): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(175): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(182): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(189): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(209): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-../COTS/Libraries\stdint.h(222): warning: '__sizeof_ptr' is not defined, evaluates to 0 [-Wundef]
-#if __sizeof_ptr == 8
-    ^
-RTE/Device/TM4C123GE6PM/system_TM4C123.c(13): warning: In file included from...
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(94): warning: In file included from...
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(338): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(357): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(713): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(729): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(774): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(779): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(872): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(885): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(892): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(897): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(904): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(910): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(917): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(924): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(929): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(936): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(942): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(949): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(956): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(961): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(968): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(974): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(981): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(988): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(993): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1000): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1006): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1013): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1020): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1025): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1032): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1038): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1045): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1052): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1057): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1064): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1070): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1077): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1084): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1089): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1096): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1102): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/Moataz/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GE6PM.h(1251): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-50 warnings generated.
-compiling system_TM4C123.c...
+compiling IntCtrl.c...
 linking...
-Program Size: Code=1064 RO-data=636 RW-data=0 ZI-data=632  
-".\Objects\fwd_AdvancedEmbedded_Project1.axf" - 0 Error(s), 80 Warning(s).
+Program Size: Code=1780 RO-data=652 RW-data=16 ZI-data=632  
+".\Objects\fwd_AdvancedEmbedded_Project1.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -323,10 +80,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:1.0.1
+      Source file:   Device\Source\system_TM4C123.c
       Include file:  Device\Include\TM4C123\TM4C123.h
       Source file:   Device\Source\ARM\startup_TM4C123.s
-      Source file:   Device\Source\system_TM4C123.c
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:10
 </pre>
 </body>
 </html>

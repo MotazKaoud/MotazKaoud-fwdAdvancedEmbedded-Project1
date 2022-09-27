@@ -2,21 +2,22 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  Gpio_Dio.h
- *       Module:  
+ *         File:  IntCtrl.h
+ *       Module:  -
  *
- *  Description:  Header file for the GPIO_Dio driver that controls the DIO Operations
+ *  Description:  header file includes the required defenations for the Interrupt Driver     
  *  
  *********************************************************************************************************************/
-#ifndef GPIO_DIO_H
-#define GPIO_DIO_H
+#ifndef INT_CTRL_H
+#define INT_CTRL_H
 
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
-#include "Gpio_Types.h"
+#include <stdint.h>
+#include <stddef.h>
+#include "IntCtrl_Types.h"
 #include "Mcu_Hw.h"
-
 
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
@@ -36,19 +37,20 @@
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/
+extern uint8_t InterruptPeripheralGates[] ; 
+extern uint8_t InterruptGroupPriority[] ; 
+extern uint8_t InterruptSubGroupPriority[] ;
+extern uint8_t Int_User_Req_Size ;
+extern APINT_Type APINT_Req ;
 
- 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
-Dio_Level_type Dio_ReadChannel (Dio_Channel_Type ChannelId,Port_Type channelport);
-void Dio_WriteChannel (Dio_Channel_Type ChannelId,Port_Type channelport, Dio_Level_type channellevel);
-void Dio_FlipChannel (Dio_Channel_Type ChannelId,Port_Type channelport);
-Dio_Level_type Dio_ReadChannel_APB (Dio_Channel_Type ChannelId,Port_Type channelport);
-void Dio_WriteChannel_APB (Dio_Channel_Type ChannelId,Port_Type channelport, Dio_Level_type channellevel);
-void Dio_FlipChannel_APB (Dio_Channel_Type ChannelId,Port_Type channelport); 
+void IntCtrl_Init(void) ;
+
+
 #endif  /* FILE_NAME_H */
 
 /**********************************************************************************************************************
- *  END OF FILE: Gpio_Dio.h
+ *  END OF FILE: IntCtrl.h
  *********************************************************************************************************************/

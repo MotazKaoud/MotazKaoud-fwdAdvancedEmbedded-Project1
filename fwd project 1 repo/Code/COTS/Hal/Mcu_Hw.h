@@ -22,7 +22,15 @@
 ////////////////////// NVIC Registers ///////////////////////////
 
 #define PERIPHERAL_BASE_ADRESS  0xE000E000
-#define APINT *((uint32_t *)(PERIPHERAL_BASE_ADRESS + 0XD0C))
+
+#define NVIC_INT_EN(x) *((uint32_t *)(PERIPHERAL_BASE_ADRESS + 0X100 + (x*4) ))
+#define NVIC_INT_PR(x) *((uint32_t *)(PERIPHERAL_BASE_ADRESS + 0X400 + (x*4) ))
+#define NVIC_APINT     *((uint32_t *)(PERIPHERAL_BASE_ADRESS + 0XD0C))
+
+
+
+
+
 #define APINT_MASK (0xFFFF0700)
 #define APINT_Clear (APINT & ~(APINT_MASK))
 #define APINT_PRI_XXX  (APINT | 0x05FA0400)
@@ -30,7 +38,7 @@
 #define APINT_PRI_XYY  (APINT | 0x05FA0600)
 #define APINT_PRI_YYY  (APINT | 0x05FA0700)
 
-#define NVIC_PRI(x) *((uint32_t *)(PERIPHERAL_BASE_ADRESS + 0X400 + (x*4) )
+
 #define INTA(x) (x<<5)
 #define INTB(x) (x<<13)
 #define INTC(x) (x<<21)
@@ -73,9 +81,20 @@
 #define APB_GPIOPDR_PORT(x)			*((uint32_t *)(APB_BASE_ADRESS_PORT(x) +  0x514))
 #define AHB_GPIODEN_PORT(x)			*((uint32_t *)(AHB_BASE_ADRESS_PORT(x) +  0x51C))
 #define APB_GPIODEN_PORT(x)			*((uint32_t *)(APB_BASE_ADRESS_PORT(x) +  0x51C))
-
-
-
+#define AHB_GPIOIM_PORT(x)			*((uint32_t *)(AHB_BASE_ADRESS_PORT(x) +  0x410))
+#define APB_GPIOIM_PORT(x)			*((uint32_t *)(APB_BASE_ADRESS_PORT(x) +  0x410))
+#define AHB_GPIOIS_PORT(x)			*((uint32_t *)(AHB_BASE_ADRESS_PORT(x) +  0x404))
+#define APB_GPIOIS_PORT(x)			*((uint32_t *)(APB_BASE_ADRESS_PORT(x) +  0x404))
+#define AHB_GPIOIBE_PORT(x)			*((uint32_t *)(AHB_BASE_ADRESS_PORT(x) +  0x408))
+#define APB_GPIOIBE_PORT(x)			*((uint32_t *)(APB_BASE_ADRESS_PORT(x) +  0x408))
+#define AHB_GPIOIEV_PORT(x)			*((uint32_t *)(AHB_BASE_ADRESS_PORT(x) +  0x40C))
+#define APB_GPIOIEV_PORT(x)			*((uint32_t *)(APB_BASE_ADRESS_PORT(x) +  0x40C))
+#define AHB_GPIOICR_PORT(x)			*((uint32_t *)(AHB_BASE_ADRESS_PORT(x) +  0x41C))
+#define APB_GPIOICR_PORT(x)			*((uint32_t *)(APB_BASE_ADRESS_PORT(x) +  0x41C))
+#define AHB_GPIORIS_PORT(x)			*((uint32_t *)(AHB_BASE_ADRESS_PORT(x) +  0x414))
+#define APB_GPIORIS_PORT(x)			*((uint32_t *)(APB_BASE_ADRESS_PORT(x) +  0x414))
+#define AHB_GPIOICR_PORT(x)			*((uint32_t *)(AHB_BASE_ADRESS_PORT(x) +  0x41C))
+#define APB_GPIOICR_PORT(x)			*((uint32_t *)(APB_BASE_ADRESS_PORT(x) +  0x41C))
 
 
 /**********************************************************************************************************************
@@ -108,7 +127,6 @@ typedef struct
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
 
- 
 #endif
 
 

@@ -2,18 +2,15 @@
 #include "Gpio_Types.h"
 #include "SysTick_Timer.h"
 #include "User_Configs.h"
+#include "IntCtrl.h"
+#include <stdio.h>
 
 void SysTick_Handler (void);
+void GPIOB_Handler (void) ;
 void CBK (void);
 
-static Port_Type 									 port_1				= REQ_PORT_TYPE;
-static Port_PinDirectionType 			 pindir_1 		= REQ_PORT_PIN_DIRECTION_TYPE ;
-static Dio_Channel_Type 					 pin_1 				= REQ_DIO_CHANNEL_TYPE;
-static Port_PinModeType 					 pinmode_1 		= REQ_PORT_PIN_MODE_TYPE ;
-static Dio_Level_type 						 pinlevel_1 	= REQ_DIO_LEVEL_TYPE;
-static Port_PinOutputCurrentType   pincurrent_1 = REQ_PIN_OUTPUT_CURRENT_TYPE;
-static Port_PinInternalAttachType  pinattach_1 	= REQ_PIN_INTERNAL_ATTACH_TYPE;
-static PortPin_ConfigType 				 PB2 ;
+static PortPin_ConfigType 				 	 PB2 ;
+
 
 extern uint32_t  systickcounter = 0;
 static uint32_t *syscounterptr  = &systickcounter;
@@ -23,18 +20,31 @@ static Sys_Tick_Period 					  sys1_per  = REQ_SYSTICK_PERIOD ;
 static Systick_Configs 						sys_config1 ;
 
 
+//extern uint8_t on_time  ;
+//extern uint8_t off_time ;
+
+uint8_t on_time  =  REQ_ON_TIME;
+uint8_t off_time =  REQ_OFF_TIME;
+
 int main (void)
 {
 
-/**************************************** Gpio_Driver Intialization************************/
-PB2.porttype = port_1;
-PB2.portpindirection = pindir_1;
-PB2.portpin = pin_1 ;
-PB2.portpinmode = pinmode_1 ;
-PB2.portpinlevel = pinlevel_1 ;
-PB2.portpinoutputcurrent = pincurrent_1 ;
-PB2.portpinattach = pinattach_1 ;
+/**************************************** Interrupt_NVIC_driver Intializations**********************/
+IntCtrl_Init();
+
 	
+/**************************************** Gpio_Driver Intialization************************/
+PB2.porttype 									= REQ_PORT_TYPE_2;
+PB2.portpindirection 					= REQ_PORT_PIN_DIRECTION_TYPE_2;
+PB2.portpin 									= REQ_DIO_CHANNEL_TYPE_2 ;
+PB2.portpinmode 							= REQ_PORT_PIN_MODE_TYPE_2 ;
+PB2.portpinlevel 							= REQ_DIO_LEVEL_TYPE_2 ;
+PB2.portpinoutputcurrent 			= REQ_PIN_OUTPUT_CURRENT_TYPE_2 ;
+PB2.portpinattach 						= REQ_PIN_INTERNAL_ATTACH_TYPE_2 ;
+PB2.portinterruptstate				= REQ_PIN_INTERRUPT_STATE_TYPE_2 ;
+PB2.portinterruptevent 				= REQ_PIN_INTERRUPT_EVENT_TYPE_2	;
+PB2.portinterrupteventstate		= REQ_PIN_INTERRUPT_EVENT_STATE_TYPE_2	;
+
 PortPin_Init_AHB (&PB2);
 
 /**************************************** Systick_driver Intializations**********************/
@@ -45,6 +55,7 @@ sys_config1.Systick_Period = sys1_per ;
 Systick_Init( &sys_config1) ;
 Start_Systick ();
 
+
 	return 0;
 }
 
@@ -54,26 +65,30 @@ Start_Systick ();
 void SysTick_Handler ()
 {
 (*syscounterptr) ++ ;
-	
+if (NOTFICATION)
+	{
+		CBK();
+	}
 }
+
 
 
 void CBK ()
 {
-	if(Dio_ReadChannel(pin_1,port_1) == LOW ) // LED_OFF
+	if(Dio_ReadChannel_APB(REQ_DIO_CHANNEL_TYPE_2,REQ_PORT_TYPE_2) == LOW ) // LED_OFF
 
 		{
 			if((*syscounterptr >= off_time) == 0x1)
 				{
-					Dio_WriteChannel(pin_1, port_1, HIGH); //turn on
+					Dio_WriteChannel_APB(REQ_DIO_CHANNEL_TYPE_2, REQ_PORT_TYPE_2, HIGH); //turn on
 					*syscounterptr  = 0x0;
 				}
 		}
-	else if (Dio_ReadChannel(pin_1,port_1) == HIGH )// LED = ON
+	else if (Dio_ReadChannel_APB(REQ_DIO_CHANNEL_TYPE_2,REQ_PORT_TYPE_2) == HIGH )// LED = ON
 		{
 			if(*syscounterptr >= on_time)
 				{
-					Dio_WriteChannel(pin_1, port_1, LOW); //tun off
+					Dio_WriteChannel_APB(REQ_DIO_CHANNEL_TYPE_2, REQ_PORT_TYPE_2, LOW); //tun off
 					*syscounterptr = 0x0;
 			}
 		}
