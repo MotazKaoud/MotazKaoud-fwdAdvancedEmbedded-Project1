@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 void SysTick_Handler (void);
-void GPIOB_Handler (void) ;
+void GPIOA_Handler (void) ;
 void CBK (void);
 
 static PortPin_ConfigType 				 	 PB2 ;
@@ -59,9 +59,12 @@ Start_Systick ();
 	return 0;
 }
 
-
-
-
+/*
+void GPIOA_Handler () 
+{
+on_time ++ ;
+}
+*/
 void SysTick_Handler ()
 {
 (*syscounterptr) ++ ;
@@ -73,22 +76,24 @@ if (NOTFICATION)
 
 
 
+
+
 void CBK ()
 {
-	if(Dio_ReadChannel_APB(REQ_DIO_CHANNEL_TYPE_2,REQ_PORT_TYPE_2) == LOW ) // LED_OFF
+	if(Dio_ReadChannel(REQ_DIO_CHANNEL_TYPE_2,REQ_PORT_TYPE_2) == LOW ) // LED_OFF
 
 		{
 			if((*syscounterptr >= off_time) == 0x1)
 				{
-					Dio_WriteChannel_APB(REQ_DIO_CHANNEL_TYPE_2, REQ_PORT_TYPE_2, HIGH); //turn on
+					Dio_WriteChannel(REQ_DIO_CHANNEL_TYPE_2, REQ_PORT_TYPE_2, HIGH); //turn on
 					*syscounterptr  = 0x0;
 				}
 		}
-	else if (Dio_ReadChannel_APB(REQ_DIO_CHANNEL_TYPE_2,REQ_PORT_TYPE_2) == HIGH )// LED = ON
+	else if (Dio_ReadChannel(REQ_DIO_CHANNEL_TYPE_2,REQ_PORT_TYPE_2) == HIGH )// LED = ON
 		{
 			if(*syscounterptr >= on_time)
 				{
-					Dio_WriteChannel_APB(REQ_DIO_CHANNEL_TYPE_2, REQ_PORT_TYPE_2, LOW); //tun off
+					Dio_WriteChannel(REQ_DIO_CHANNEL_TYPE_2, REQ_PORT_TYPE_2, LOW); //tun off
 					*syscounterptr = 0x0;
 			}
 		}

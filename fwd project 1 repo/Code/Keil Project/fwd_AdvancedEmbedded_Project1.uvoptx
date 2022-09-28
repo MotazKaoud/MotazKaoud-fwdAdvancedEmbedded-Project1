@@ -125,7 +125,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDARM</Key>
-          <Name>(1010=706,112,1156,669,0)(1007=-1,-1,-1,-1,0)(1008=446,431,822,667,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(9108=-1,-1,-1,-1,0)(9106=-1,-1,-1,-1,0)(9104=-1,-1,-1,-1,0)(9107=-1,-1,-1,-1,0)(9109=-1,-1,-1,-1,0)(9102=805,0,1211,284,0)</Name>
+          <Name>(1010=706,112,1156,669,0)(1007=105,137,292,412,0)(1008=446,431,822,667,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(9108=-1,-1,-1,-1,0)(9106=-1,-1,-1,-1,0)(9104=-1,-1,-1,-1,0)(9107=-1,-1,-1,-1,0)(9109=-1,-1,-1,-1,0)(9102=805,0,1211,284,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -142,18 +142,34 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>58</LineNumber>
+          <LineNumber>150</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
+          <Address>2130</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\MotazKaoud-fwdAdvancedEmbedded-Project1\fwd project 1 repo\Code\COTS\Mcal\Gpio_Port.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\fwd_AdvancedEmbedded_Project1\Gpio_Port.c\150</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>56</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>2366</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
           <Filename>F:\ASUFE\Postgraduate\Learning_Courses\FWD Embedded Systems Advanced Track\Codes\_workspace\MotazKaoud-fwdAdvancedEmbedded-Project1\fwd project 1 repo\Code\COTS\Application\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\fwd_AdvancedEmbedded_Project1\main.c\56</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -182,7 +198,7 @@
         <Mm>
           <WinNumber>1</WinNumber>
           <SubType>0</SubType>
-          <ItemText>0xE000E400</ItemText>
+          <ItemText> 0x40058000</ItemText>
           <AccSizeX>0</AccSizeX>
         </Mm>
       </MemoryWindow1>

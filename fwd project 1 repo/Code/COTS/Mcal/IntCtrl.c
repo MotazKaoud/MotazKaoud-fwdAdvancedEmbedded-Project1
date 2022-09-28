@@ -54,7 +54,6 @@
 void IntCtrl_Init(void) 
 {
 uint8_t counter; 
-uint32_t counter2 = 0;
 uint8_t int_en_bit ;
 uint8_t int_pri_reg ;
 uint8_t int_num ;	

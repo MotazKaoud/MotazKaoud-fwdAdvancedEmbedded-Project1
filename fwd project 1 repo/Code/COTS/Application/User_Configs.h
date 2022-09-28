@@ -33,10 +33,10 @@
  *********************************************************************************************************************/
 
 /************** GPIO User Requirments ******************/
-#define REQ_PORT_TYPE_2												PORTF				
+#define REQ_PORT_TYPE_2												PORTA				
 #define REQ_PORT_PIN_DIRECTION_TYPE_2 				OUT	
-#define REQ_DIO_CHANNEL_TYPE_2 								P1	
-#define REQ_PORT_PIN_MODE_TYPE_2							PF1_DIO
+#define REQ_DIO_CHANNEL_TYPE_2 								P0	
+#define REQ_PORT_PIN_MODE_TYPE_2							PA0_DIO
 #define REQ_DIO_LEVEL_TYPE_2 									LOW
 #define REQ_PIN_OUTPUT_CURRENT_TYPE_2					mA8
 #define REQ_PIN_INTERNAL_ATTACH_TYPE_2				UP
