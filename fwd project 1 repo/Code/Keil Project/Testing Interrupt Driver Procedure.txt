@@ -1,0 +1,21 @@
+Interrupts gpioportA,gpioportb,gpioportc = int0,int1,int2
+regEN0 : 0xE000E100
+expec val = 0x00000001 -> 0x00000003 -> 0x00000007
+--------------
+APINT Reg : 0xE000ED0C
+req set XXY = 5<<8
+expec rval : 0x05FA0000 || = 0x5FA0500
+----------------
+priority registers for int0,int1,int2,   int3 
+ 0xE000E400
+set with group-subgroup priority
+for int0,int1,int2 = 1,1 - 1,1  - 1,1 ==> 01100000011000000110000001100000
+expec val = 0x60606060
+----------------
+in GPIO Port
+req  :  for pin1 
+- ON_EDGE : GPIOIS clear bit 
+- ON_HIGH : GPIOIEV set bit
+- ENABLE_GINT : 
+		 GPIOICR clear reg
+		 GPIOIM set bit
